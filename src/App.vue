@@ -1,5 +1,9 @@
 <template>
-  <div>HELLO WORLD</div>
+  <div class="w-screen h-screen bg-slate-800">
+    <router-view v-slot="slotProps">
+      <component :is="slotProps.Component"></component>
+    </router-view>
+  </div>
 </template>
 
 <script>
