@@ -39,7 +39,7 @@
         />
         <BasicButton
           :disabled="!meta.valid" 
-          @click="(e) => register(e, meta)"
+          @click="(e) => register(e, meta, values)"
         >
           Register
         </BasicButton>
@@ -56,15 +56,26 @@ import Wrapper from "@/components/Layout/Wrapper.vue";
 import BasicInput from "@/components/Inputs/BasicInput.vue";
 import BasicButton from "@/components/UI/BasicButton.vue";
 import Message from "@/components/Form/Message.vue";
+import axios from "@/config/axios/index.js";
 
 export default {
   name: "Register",
   components: { Card, Wrapper, BasicInput, BasicButton, VeeForm, Message },
   methods: {
-    register(e, meta) {
+    register(e, meta, values) {
       e.preventDefault();
       if (!meta.valid) return;
-      console.log(meta);
+      console.log(values);
+      axios.post('register', {
+        username: values.username,
+        email: values.email,
+        password: values.password,
+        confirm_password: values.confirm_password
+      }).then((res) => {
+        this.$router.push('/login');
+      }).catch((err) => {
+        console.log(err)
+      })
     },
   },
 };

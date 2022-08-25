@@ -23,7 +23,7 @@
         />
         <BasicButton 
           :disabled="!meta.valid"
-          @click="(e) => login(e, meta)"
+          @click="(e) => login(e, meta, values)"
         >
           Login
         </BasicButton>
@@ -40,14 +40,24 @@ import Wrapper from "@/components/Layout/Wrapper.vue";
 import BasicInput from "@/components/Inputs/BasicInput.vue";
 import BasicButton from "@/components/UI/BasicButton.vue";
 import Message from "@/components/Form/Message.vue";
+import axios from "@/config/axios/index.js";
+import {setJwtToken} from "@/helpers/jwt/index.js";
 export default {
   name: "Login",
   components: { Card, Wrapper, BasicInput, BasicButton, VeeForm, Message },
   methods: {
-    login(e, meta) {
+    login(e, meta, values) {
       e.preventDefault();
       if (!meta.valid) return;
-      console.log(meta);
+      axios
+          .post("login", {
+            email: values.email,
+            password: values.password
+          })
+          .then((response) => {
+            setJwtToken(response.data.access_token, response.data.expires_in);
+            this.$router.push("/");
+          });
     },
   },
 };
