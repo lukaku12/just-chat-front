@@ -1,15 +1,6 @@
 import axios from "@/config/axios/index.js";
 
 /*
- * retrieves JWT token from cookie named 'jwt_token' and returns it's value
- */
-export const getJwtToken = () => {
-    const value = `; ${document.cookie}`;
-    const parts = value.split(`jwt_token=`);
-    return parts.length === 2 ? parts.pop().split(";").shift() : null;
-};
-
-/*
  * set new cookie named  'jwt_token' and also append
  * Authentication: Bearer {token} header to our axios instance
  */
