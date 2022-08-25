@@ -11,6 +11,7 @@
   "dependencies": {
     "vee-validate": "^4.6.6",
     "@vee-validate/rules": "^4.5.11",
+    "@vee-validate/i18n": "^4.6.2",
     "vue": "^3.2.37",
     "vue-router": "^4.1.4",
     "vuex": "^4.0.2"

@@ -3,6 +3,7 @@ import { createApp } from 'vue'
 import router from '@/router/index'
 
 import "@/config/vee-validate/rules";
+import "@/config/vee-validate/messages"
 import '@/index.css'
 
 
