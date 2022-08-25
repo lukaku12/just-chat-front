@@ -7,6 +7,7 @@
           title="Email"
           type="email"
           name="email"
+          :value="values.email"
           rules="required|email"
           :errors="errors"
           placeholder="Enter your email"
@@ -17,17 +18,17 @@
           name="password"
           rules="required|min:6|max:25"
           :errors="errors"
+          :value="values.password"
           placeholder="Enter your password"
         />
-        <BasicButton :disabled="!meta.isValid" @click="(e) => login(e, meta)"
-          >Login</BasicButton
+        <BasicButton 
+          :disabled="!meta.valid"
+          @click="(e) => login(e, meta)"
         >
-        <div class="w-full text-center">
-          <router-link class="text-gray-500 text-xs" :to="{ name: 'register' }">
-            Or register instead
-          </router-link>
-        </div>
+          Login
+        </BasicButton>
       </VeeForm>
+      <Message action="register"/>
     </Card>
   </Wrapper>
 </template>
@@ -38,12 +39,14 @@ import Card from "@/components/UI/Card.vue";
 import Wrapper from "@/components/Layout/Wrapper.vue";
 import BasicInput from "@/components/Inputs/BasicInput.vue";
 import BasicButton from "@/components/UI/BasicButton.vue";
+import Message from "@/components/Form/Message.vue";
 export default {
   name: "Login",
-  components: { Card, Wrapper, BasicInput, BasicButton, VeeForm },
+  components: { Card, Wrapper, BasicInput, BasicButton, VeeForm, Message },
   methods: {
     login(e, meta) {
       e.preventDefault();
+      if (!meta.valid) return;
       console.log(meta);
     },
   },

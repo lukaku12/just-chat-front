@@ -3,6 +3,18 @@
 @tailwind utilities;
 
 button:disabled {
-    opacity: .5;
+    opacity: .8;
     cursor: not-allowed;
+}
+.auth-wrapper {
+    animation: smoothAppear 300ms ease-in-out forwards;
+}
+
+@keyframes smoothAppear {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
