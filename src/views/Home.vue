@@ -1,6 +1,9 @@
 <template>
-  <section class="w-full h-full bg-white">
+  <section class="w-full h-full bg-white flex">
     <Sidebar></Sidebar>
+    <div class="flex w-full h-full justify-center items-center">
+      <h1>WILL BE ADDED SOON...</h1>
+    </div>
   </section>
 
 </template>
