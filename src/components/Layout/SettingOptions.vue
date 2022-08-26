@@ -1,6 +1,6 @@
 <template>
   <div
-    class="absolute w-[200px] h-[150px] border rounded bottom-9 bg-white flex justify-between items-center shadow page-transition"
+    class="absolute w-[200px] h-[150px] border rounded bottom-9 bg-white z-20 flex justify-between items-center shadow page-transition"
   >
     <div class="flex flex-col justify-between items-center gap-[32px] pl-5">
       <router-link to="/profile">

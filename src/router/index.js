@@ -8,22 +8,49 @@ import Messenger from "@/views/Messenger.vue";
 import Statistics from "@/views/Statistics.vue";
 import Search from "@/views/Search.vue";
 import Calendar from "@/views/Calendar.vue";
+import Profile from "@/views/Profile.vue";
 
 const router = createRouter({
   history: createWebHistory(),
   routes: [
+    { path: "/login", component: Login, name: "login" },
+    { path: "/register", component: Register, name: "register" },
     {
       path: "/",
       component: Home,
       name: "home",
       beforeEnter: [isAuthenticated],
     },
-    { path: "/login", component: Login, name: "login" },
-    { path: "/register", component: Register, name: "register" },
-    { path: "/messenger", component: Messenger, name: "messenger" },
-    { path: "/statistics", component: Statistics, name: "statistics" },
-    { path: "/search", component: Search, name: "search" },
-    { path: "/calendar", component: Calendar, name: "calendar" },
+    {
+      path: "/profile",
+      component: Profile,
+      name: "profile",
+      beforeEnter: [isAuthenticated],
+    },
+    {
+      path: "/messenger",
+      component: Messenger,
+      name: "messenger",
+      beforeEnter: [isAuthenticated],
+    },
+    {
+      path: "/statistics",
+      component: Statistics,
+      name: "statistics",
+      beforeEnter: [isAuthenticated],
+    },
+    {
+      path: "/search",
+      component: Search,
+      name: "search",
+      beforeEnter: [isAuthenticated],
+    },
+    {
+      path: "/calendar",
+      component: Calendar,
+      name: "calendar",
+      beforeEnter: [isAuthenticated],
+    },
     {
       path: "/:notFound(.*)",
       redirect: { name: "home" },
