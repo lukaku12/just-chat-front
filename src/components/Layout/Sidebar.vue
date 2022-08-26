@@ -5,13 +5,11 @@
     >
       <div class="w-[56px] h-auto">
         <!-- CHANGE DIV WITH IMG HERE   -->
-        <router-link to="/profile">
           <div
             class="w-[56px] h-[56px] rounded-[14px] bg-[#615EF0] flex items-center justify-center text-2xl font-bold text-white select-none"
           >
             {{ usernameFirstLetter }}
           </div>
-        </router-link>
         <!-- CHANGE DIV WITH IMG HERE   -->
 
         <!--  NAVIGATION LINKS   -->
@@ -67,10 +65,11 @@
         <!--  NAVIGATION LINKS   -->
       </div>
       <!--   SETTINGS HERE   -->
-      <div class="text-2xl">
+      <div class="text-2xl relative">
         <button @click="toggleSettings">
           <font-awesome-icon icon="fa-solid fa-gear" :class="settingIsOpen ? '-rotate-90 transition' : 'rotate-90 transition'"/>
         </button>
+        <SettingOptions v-if="settingIsOpen"/>
       </div>
       <!--   SETTINGS HERE   -->
     </div>
@@ -80,8 +79,10 @@
 <script>
 import { mapState } from "vuex";
 import axios from "@/config/axios/index.js";
+import SettingOptions from "@/components/Layout/SettingOptions.vue";
 export default {
   name: "Sidebar",
+  components: {SettingOptions},
   data() {
     return {
       settingIsOpen: false,
