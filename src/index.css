@@ -9,6 +9,9 @@ button:disabled {
 .auth-wrapper {
     animation: smoothAppear 300ms ease-in-out forwards;
 }
+.sidebar-custom-box-shadow{
+    box-shadow: 0 0 24px rgba(0, 0, 0, 0.08);
+}
 
 @keyframes smoothAppear {
     from {
