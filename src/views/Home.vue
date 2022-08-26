@@ -12,8 +12,7 @@ export default {
   methods: {
     logout() {
       axios.post("logout").then(() => {
-        document.cookie =
-            "jwt_token=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+        localStorage.removeItem("jwt_token");
         this.$router.push("/login");
       });
     },

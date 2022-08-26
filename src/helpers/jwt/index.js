@@ -7,7 +7,8 @@ import axios from "@/config/axios/index.js";
 export const setJwtToken = (token, expires_in) => {
     let expires = new Date();
     expires.setTime(expires.getTime() + expires_in * 1000);
-    document.cookie = `jwt_token=${token}; expires=${expires.toUTCString()}; path=/`;
+    const localStorageJwtJson = JSON.stringify({token, expires_in})
 
+    localStorage.setItem("jwt_token", localStorageJwtJson);
     axios.defaults.headers["Authorization"] = `Bearer ${token}`;
 };

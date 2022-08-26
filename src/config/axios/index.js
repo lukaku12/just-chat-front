@@ -1,8 +1,8 @@
 import axios from "axios";
 
-const value = `; ${document.cookie}`;
-const parts = value.split(`jwt_token=`);
-export const token = parts.length === 2 ? parts.pop().split(";").shift() : null;
+const value = localStorage.getItem("jwt_token");
+const parts = JSON.parse(value);
+export const token = parts ? parts.token : null;
 
 const axiosInstance = axios.create({
     baseURL: import.meta.env.VITE_API_BASE_URL,
