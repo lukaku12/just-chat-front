@@ -1,14 +1,17 @@
 <template>
-  <div>THIS IS HOME PAGE</div>
-  <button @click="logout">Logout</button>
+  <section class="w-full h-full bg-white">
+    <Sidebar></Sidebar>
+  </section>
+
 </template>
 
 <script>
 import axios from "@/config/axios/index.js";
+import Sidebar from "@/components/Layout/Sidebar.vue";
 
 export default {
   name: "Home",
-  components: {},
+  components: {Sidebar},
   methods: {
     logout() {
       axios.post("logout").then(() => {
