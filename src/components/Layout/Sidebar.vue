@@ -19,7 +19,7 @@
               <router-link
                 to="/"
                 class="text-2xl"
-                :class="{'text-purple-500': routePath === '/'}"
+                :class="{'text-[#615EF0]': routePath === '/'}"
               >
                 <font-awesome-icon icon="fa-solid fa-house-chimney" />
               </router-link>
@@ -28,16 +28,16 @@
               <router-link
                 to="/messenger"
                 class="text-2xl"
-                :class="{'text-purple-500': routePath === '/messenger'}"
+                :class="{'text-[#615EF0]': routePath === '/messenger'}"
               >
-                <font-awesome-icon icon="fa-solid fa-message" />
+                <font-awesome-icon icon="fa-solid fa-comments" />
               </router-link>
             </li>
             <li class="flex items-center">
               <router-link
                 to="/statistics"
                 class="text-2xl"
-                :class="{'text-purple-500': routePath === '/statistics'}"
+                :class="{'text-[#615EF0]': routePath === '/statistics'}"
               >
                 <font-awesome-icon icon="fa-solid fa-chart-pie" />
               </router-link>
@@ -46,7 +46,7 @@
               <router-link
                 to="/search"
                 class="text-2xl"
-                :class="{'text-purple-500': routePath === '/search'}"
+                :class="{'text-[#615EF0]': routePath === '/search'}"
               >
                 <font-awesome-icon icon="fa-solid fa-magnifying-glass" />
               </router-link>
@@ -55,7 +55,7 @@
               <router-link
                 to="/calendar"
                 class="text-2xl"
-                :class="{'text-purple-500': routePath === '/calendar'}"
+                :class="{'text-[#615EF0]': routePath === '/calendar'}"
               >
                 <font-awesome-icon icon="fa-solid fa-calendar-day" />
               </router-link>

@@ -1,5 +1,7 @@
 <template>
-  <section class="w-full h-full flex flex-col justify-center items-center auth-wrapper">
+  <section
+    class="w-full h-full flex flex-col justify-center items-center page-transition"
+  >
     <slot />
   </section>
 </template>

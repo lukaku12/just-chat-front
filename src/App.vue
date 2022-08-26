@@ -1,5 +1,5 @@
 <template>
-  <div class="w-screen h-screen bg-slate-800">
+  <div class="w-screen h-screen bg-[#615EF0]">
     <router-view v-slot="slotProps">
       <component :is="slotProps.Component"></component>
     </router-view>

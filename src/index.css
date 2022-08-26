@@ -6,17 +6,32 @@ button:disabled {
     opacity: .8;
     cursor: not-allowed;
 }
-.auth-wrapper {
+
+.page-transition {
     animation: smoothAppear 300ms ease-in-out forwards;
 }
-.sidebar-custom-box-shadow{
+
+.sidebar-custom-box-shadow {
     box-shadow: 0 0 24px rgba(0, 0, 0, 0.08);
+}
+
+.right-border {
+    border-right: 1px solid #e6e6e6;
+}
+
+.bottom-border {
+    border-bottom: 1px solid #e6e6e6;
+}
+
+.call-purple-background {
+    background: rgba(97, 94, 240, 0.1);
 }
 
 @keyframes smoothAppear {
     from {
         opacity: 0;
     }
+
     to {
         opacity: 1;
     }

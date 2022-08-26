@@ -1,6 +1,6 @@
 <template>
   <div
-    class="absolute w-[200px] h-[150px] border rounded bottom-9 bg-white flex justify-between items-center shadow auth-wrapper"
+    class="absolute w-[200px] h-[150px] border rounded bottom-9 bg-white flex justify-between items-center shadow page-transition"
   >
     <div class="flex flex-col justify-between items-center gap-[32px] pl-5">
       <router-link to="/profile">
@@ -9,10 +9,13 @@
           <span class="text-2xl">Profile</span>
         </div>
       </router-link>
-      <div class="flex items-center justify-between gap-[32px]">
+      <button
+        @click="logout"
+        class="flex items-center justify-between gap-[32px]"
+      >
         <font-awesome-icon icon="fa-solid fa-sign-out-alt" />
-        <button @click="logout" class="text-2xl">Logout</button>
-      </div>
+        <span class="text-2xl">Logout</span>
+      </button>
     </div>
   </div>
 </template>

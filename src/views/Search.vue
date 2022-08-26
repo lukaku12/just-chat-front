@@ -1,7 +1,7 @@
 <template>
   <section class="w-full h-full bg-white flex">
     <Sidebar></Sidebar>
-    <div class="flex w-full h-full justify-center items-center">
+    <div class="flex w-full h-full justify-center items-center page-transition">
       <h1>SEARCH WILL BE ADDED SOON...</h1>
     </div>
   </section>
@@ -11,6 +11,6 @@
 import Sidebar from "@/components/Layout/Sidebar.vue";
 export default {
   name: "Search",
-  components: {Sidebar},
-}
+  components: { Sidebar },
+};
 </script>

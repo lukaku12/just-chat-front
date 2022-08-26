@@ -6,7 +6,7 @@
     <Field
       :id="name"
       :name="name"
-      class="border rounded border-slate-800 py-2 px-4 z-10 focus:outline-none bg-[#CED4DA] text-[#6C757D] font-semibold"
+      class="border rounded border-[#615EF0] py-2 px-4 z-10 focus:outline-none bg- bg-transparent text-[#6C757D] font-semibold"
       :class="{ inputError: errors[name] }"
       :type="type"
       :rules="rules"
